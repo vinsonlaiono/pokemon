@@ -7,21 +7,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
     <script>
-         
-        var http = "https://";
-        var count = 0;
-        for(var i = 1; i < 100; i++){
-            console.log($('.img').append('<img src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png" alt="bulbasaur">'))
-            $('.img').append('<img src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png" alt="bulbasaur">')
-        }
+         $(document).ready(function(){
+            var http = "https://";
+            var count = 0;
+            for(var i = 1; i < 1000; i++){
+                console.log($('.img').append('<img src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png" alt="bulbasaur">'))
+                $('.img').append('<img src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png" alt="bulbasaur">')}
+         });
+        
     </script>
 </head>
 <body>
 
     <div class="img">
-            <img src="https://pokeapi.co/media/sprites/pokemon/2.png" alt="bulbasaur">
-            <img src="https://pokeapi.co/media/sprites/pokemon/1.png" alt="bulbasaur">
-            <img src="https://pokeapi.co/media/sprites/pokemon/3.png" alt="bulbasaur">
+            
     </div>
        
 </body>
