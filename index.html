@@ -8,19 +8,39 @@
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
     <script>
          $(document).ready(function(){
-            for(var i = 1; i < 152; i++){
-                // console.log($('.img').append('<img src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png" alt="bulbasaur">'))
-                $('.img').append('<img src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png" alt="bulbasaur">')
-                }
-         });
+                $.get("https://pokeapi.co/api/v2/pokemon/1/", function(res) {
+
+                    // console.log(res)
+                    console.log(res.species.name)
+                    console.log(res.types[0].type.name)
+                    var html_str = "<h2>" + res.species.name + "</h4>";
+                    html_str += "<h4>Types</h4>";
+                    html_str += "<ul>"; 
+                    for(var i = 0; i < res.types.length; i++) {
+                        html_str += "<li>" + res.types[i].type.name + "</li>";
+                    }
+                    html_str += "</ul>";
+                    $(".pokedex").html(html_str);
+                }, "json");
+                for(var i = 1; i < 100; i++){
+                $('.img').append('<img id="' + i + '"src="https://pokeapi.co/media/sprites/pokemon/' + i +'.png" alt="bulbasaur">')
+                }   
+            })
+
+
+           
         
     </script>
 </head>
 <body>
-
-    <div class="img">
+    <div class="container">
+            <div class="pokemon">
+                <div class="img"></div>
+            </div>
             
+            <div class="pokedex"></div>
     </div>
+    
        
 </body>
 </html>
