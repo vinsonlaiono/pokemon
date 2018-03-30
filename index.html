@@ -8,24 +8,48 @@
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
     <script>
          $(document).ready(function(){
-                $.get("https://pokeapi.co/api/v2/pokemon/1/", function(res) {
+            for(var i = 1; i < 100; i++){
+            $('.img').append('<img id="' + i + '"src="https://pokeapi.co/media/sprites/pokemon/' + i +'.png" alt="bulbasaur">')
+            } // end of for loop
+            
 
-                    // console.log(res)
-                    console.log(res.species.name)
-                    console.log(res.types[0].type.name)
-                    var html_str = "<h2>" + res.species.name + "</h4>";
-                    html_str += "<h4>Types</h4>";
-                    html_str += "<ul>"; 
-                    for(var i = 0; i < res.types.length; i++) {
-                        html_str += "<li>" + res.types[i].type.name + "</li>";
-                    }
-                    html_str += "</ul>";
-                    $(".pokedex").html(html_str);
-                }, "json");
-                for(var i = 1; i < 100; i++){
-                $('.img').append('<img id="' + i + '"src="https://pokeapi.co/media/sprites/pokemon/' + i +'.png" alt="bulbasaur">')
-                }   
-            })
+           $('img').click(function(){
+                var temp = $(this).attr('id');
+                console.log(temp)
+                
+                $.get("https://pokeapi.co/api/v2/pokemon/" + temp + "/", function(res) {
+                    
+                console.log(res)
+                console.log(res.species.name)
+                console.log(res.types[0].type.name)
+                
+                var html_str = "";
+                
+                html_str += "<h2>" + res.species.name + "</h4>"; // species name
+                
+                html_str += '<img id="' + temp + '"src="https://pokeapi.co/media/sprites/pokemon/' + temp +'.png" alt="bulbasaur">'
+                
+                html_str += "<h4>Types</h4>";       //Types Title
+                html_str += "<ul>"; 
+                for(var i = 0; i < res.types.length; i++) {
+                    html_str += "<li>" + res.types[i].type.name + "</li>";
+                }
+                html_str += "</ul>";
+                html_str += "<h4>Height</h4>";       //height Title
+                html_str += "<ul>";                 
+                html_str += "<li>" + res.height + "</li>";
+                html_str += "</ul>";
+               
+                html_str += "<h4>Weight</h4>";       //weight Title
+                html_str += "<ul>"; 
+                html_str += "<li>" + res.weight + "</li>";
+                html_str += "</ul>";
+                html_str += ""
+                $(".pokedex").html(html_str);
+                return;
+            }, "json");
+           }); //end of click function
+        }) // end of document.ready
 
 
            
