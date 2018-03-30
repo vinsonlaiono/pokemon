@@ -8,11 +8,9 @@
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
     <script>
          $(document).ready(function(){
-            for(var i = 1; i < 100; i++){
+            for(var i = 1; i < 152; i++){
             $('.img').append('<img id="' + i + '"src="https://pokeapi.co/media/sprites/pokemon/' + i +'.png" alt="bulbasaur">')
             } // end of for loop
-            
-
            $('img').click(function(){
                 var temp = $(this).attr('id');
                 console.log(temp)
@@ -46,25 +44,19 @@
                 html_str += "</ul>";
                 html_str += ""
                 $(".pokedex").html(html_str);
-                return;
+                
             }, "json");
            }); //end of click function
+           return false;
         }) // end of document.ready
-
-
-           
-        
     </script>
 </head>
 <body>
     <div class="container">
-            <div class="pokemon">
-                <div class="img"></div>
-            </div>
-            
-            <div class="pokedex"></div>
+        <div class="pokemon">
+            <div class="img"></div>
+        </div>
+        <div class="pokedex"></div>
     </div>
-    
-       
 </body>
 </html>

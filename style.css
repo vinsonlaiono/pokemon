@@ -4,17 +4,20 @@
     vertical-align: top;
 }
 .pokedex{
-    height: 470px;
+    height: 500px;
     width: 250px;
-    border: red solid 5px;
+    border: red solid 10px;
     display: inline-block;
     vertical-align: top;
-    position: absolute;
+    position: absolute;;
 }
 .pokemon{
     display: inline-block;
     width: 75%;     
 }
 .img{
-    border: solid 1px dashed black;
+    width: 700px;
+    height: 700px;
+    overflow-y: scroll;
 }
+
