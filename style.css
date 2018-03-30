@@ -9,15 +9,40 @@
     border: red solid 10px;
     display: inline-block;
     vertical-align: top;
-    position: absolute;;
+    position: absolute;
+    border-radius: 20px;
+    background-color: #cacccb;
 }
 .pokemon{
     display: inline-block;
-    width: 75%;     
+    width: 53%;     
 }
 .img{
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
     overflow-y: scroll;
+    border: 10px solid red;
+    border-radius: 20px;
+    background-color: #cacccb
+}
+h2{
+    text-align: center;
+    font-family: monospace;
+    font-size: 35px;
+}
+.pokedex img{
+    margin-left: 55px;
+    width: 140px;
+}
+.pokedex h4{
+    margin-left: 20px;
+    font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.pokedex li{
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: monospace;
 }
 
